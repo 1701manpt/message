@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 // Option 1: Passing a connection URI
 const sequelize = new Sequelize('postgres://moviego:A6XpVGrfFD4WUzoXpfU5puM77zIy94F0@dpg-cg84bendvk4ljrg7dcig-a/moviego') // Example for postgres
@@ -13,4 +13,26 @@ const check = async () => {
     }
 }
 
-module.exports = check
+const User = sequelize.define(
+    'User',
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        account: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    },
+    {
+        paranoid: true,
+    },
+)
+
+module.exports = { check, User }
