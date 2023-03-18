@@ -2,21 +2,18 @@ const defineTable = require('./tables')
 
 module.exports = {
     "development": {
-        "username": "moviego",
-        "password": "A6XpVGrfFD4WUzoXpfU5puM77zIy94F0",
-        "host": "dpg-cg84bendvk4ljrg7dcig-a.singapore-postgres.render.com",
-        "database": "moviego",
-        "dialect": "postgres",
-        "port": 5432,
-        "protocol": "postgres",
-        "dialectOptions": {
-            "useUTC": false,
-            "ssl": {
-                "require": true,
-                "rejectUnauthorized": false
-            }
+        "username": "epiz_33805531",
+        "password": "rbFQkiRnYa92",
+        "host": "sql307.byetcluster.com",
+        "database": "epiz_33805531_testmoviego",
+        "dialect": "mysql",
+        port: 3306,
+        pool: {
+            max: 10,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
         },
-        "timezone": "+07:00",
         define: defineTable
     },
     "test": {
